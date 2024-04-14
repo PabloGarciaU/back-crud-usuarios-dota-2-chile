@@ -5,13 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const users_1 = __importDefault(require("../routers/users"));
-const databaseInitializer_1 = require("../db/databaseInitializer"); // Importa la función createDatabase 
+const databaseInitializer_1 = require("../db/databaseInitializer");
 class Server {
     constructor() {
         console.log(process.env.PORT);
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || 3001;
         this.listen();
+        this.createDatabase();
         this.midlewares();
         this.router();
     }
@@ -35,5 +36,6 @@ class Server {
     createDatabase() {
         (0, databaseInitializer_1.createDatabase)();
     }
+    ;
 }
 exports.default = Server;
