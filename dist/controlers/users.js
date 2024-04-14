@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteUser = exports.putUser = exports.postUser = exports.getUser = exports.getUsers = void 0;
+exports.deleteUser = exports.updateUser = exports.postUser = exports.getUser = exports.getUsers = void 0;
 const getUsers = (req, res) => {
     res.json({
         msg: 'get Users'
@@ -23,14 +23,14 @@ const postUser = (req, res) => {
     });
 };
 exports.postUser = postUser;
-const putUser = (req, res) => {
+const updateUser = (req, res) => {
     const { id } = req.params; // Corregido para acceder a req.body.id
     res.json({
         msg: 'put User',
         id
     });
 };
-exports.putUser = putUser;
+exports.updateUser = updateUser;
 const deleteUser = (req, res) => {
     const { id } = req.params;
     res.json({

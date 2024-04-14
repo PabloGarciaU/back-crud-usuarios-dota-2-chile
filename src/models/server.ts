@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from 'express';
-import routesUsers from '../routers/users'; 
+import routesUsers from '../routers/users';
+import { createDatabase } from '../db/databaseInitializer'; // Importa la función createDatabase 
 
 class Server {
     private app: Application;
@@ -32,6 +33,10 @@ class Server {
     midlewares() {
         // Body parser
         this.app.use(express.json());
+    }
+
+    createDatabase() {
+        createDatabase();
     }
 
 }
