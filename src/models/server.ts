@@ -1,6 +1,5 @@
 import express, { Application, Request, Response } from 'express';
 import routesUsers from '../routers/users';
-import { createDatabase } from '../db/databaseInitializer';
 
 class Server {
     private app: Application;
@@ -11,7 +10,6 @@ class Server {
         this.app = express();
         this.port = process.env.PORT || 3001; 
         this.listen();
-        this.createDatabase();
         this.midlewares();
         this.router();
     }
@@ -35,10 +33,6 @@ class Server {
         // Body parser
         this.app.use(express.json());
     }
-
-    createDatabase(){
-        createDatabase();
-    };
 
 }
 
