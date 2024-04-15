@@ -8,22 +8,28 @@ const Usuario = db.define('Usuario', {
         autoIncrement: true
     },
     nombre: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false // Nombre es obligatorio
     },
     apodo: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false // Apodo es obligatorio
     },
     rut: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false // Rut es obligatorio
     },
     fechadenacimiento: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        allowNull: false // Fecha de nacimiento es obligatoria
     },
     horasjugadas: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false // Horas jugadas es obligatorio
     },
     rangoactual: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        allowNull: false // Rango actual es obligatorio
     }
 }, {
     createdAt: false,
