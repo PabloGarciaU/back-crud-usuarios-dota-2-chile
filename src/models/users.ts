@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import db from '../db/connection';
 
-const Usuarios = db.define('usuario', {
+const Usuario = db.define('Usuario', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -25,6 +25,9 @@ const Usuarios = db.define('usuario', {
     rangoactual: {
         type: DataTypes.STRING
     }
+}, {
+    createdAt: false,
+    updatedAt: false
 });
 
-export default Usuarios;
+export default Usuario;
